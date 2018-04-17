@@ -1,0 +1,30 @@
+{
+  "description": "Mock user data",
+  "data": [
+    {
+      "username": "hibeekaey",
+      "password": "",
+      "data": []
+    },
+    {
+      "username": "",
+      "password": "",
+      "data": []
+    },
+    {
+      "username": "",
+      "password": "",
+      "data": []
+    },
+    {
+      "username": "",
+      "password": "",
+      "data": []
+    },
+    {
+      "username": "",
+      "password": "",
+      "data": []
+    }
+  ]
+}
