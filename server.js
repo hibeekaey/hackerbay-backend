@@ -21,6 +21,9 @@ const routes = require("./routes");
 // initialize app
 let app = express();
 
+// public directory
+app.use(express.static("public"));
+
 let logDirectory = `${process.cwd()}/logs`; // log directory
  
 // ensure log directory exists
@@ -48,4 +51,4 @@ app.use(morgan("common", {stream: accessLogStream}));
 routes.mount(app);
 
 // listen to the app on port process.env.PORT
-app.listen(process.env.PORT, () => console.log(`App listening on port ${process.env.PORT}`));
+app.listen(process.env.PORT);
