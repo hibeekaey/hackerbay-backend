@@ -17,9 +17,7 @@ const auth = require("../lib/auth"); // require authentication module
 const router = express.Router();
 
 // define the login route
-router.post("/", auth, (req, res) => {
-  res.send("LOGIN");
-});
+router.post("/", auth);
 
 // set up a router and pass it using module.exports
 module.exports = router;
