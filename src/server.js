@@ -10,19 +10,24 @@
  * Module dependencies.
  */
 
-const express = require("express");
-const bodyParser = require("body-parser");
-const fs = require("fs");
-const morgan = require("morgan");
-const rfs = require("rotating-file-stream");
-const dotenv = require("dotenv").config();
-const routes = require("./routes");
+import "regenerator-runtime/runtime";
+
+import express from "express";
+import bodyParser from "body-parser";
+import fs from "fs";
+import morgan from "morgan";
+import dotenv from "dotenv";
+import rfs from "rotating-file-stream";
+import { mount } from "./routes";
+
+// use .env
+dotenv.config();
 
 // initialize app
 let app = express();
 
 // public directory
-app.use(express.static("public"));
+app.use(express.static(`${process.cwd()}/public`));
 
 let logDirectory = `${process.cwd()}/logs`; // log directory
  
@@ -30,8 +35,8 @@ let logDirectory = `${process.cwd()}/logs`; // log directory
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 
 // create a rotating write stream
-var accessLogStream = rfs('access.log', {
-  interval: '1d', // rotate daily
+var accessLogStream = rfs("access.log", {
+  interval: "1d", // rotate daily
   path: logDirectory
 });
 
@@ -48,7 +53,7 @@ app.use(morgan("dev", {
 app.use(morgan("common", {stream: accessLogStream}));
 
 // use app routes
-routes.mount(app);
+mount(app);
 
 // listen to the app on port process.env.PORT
 app.listen(process.env.PORT);
