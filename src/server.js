@@ -46,7 +46,7 @@ app.use(bodyParser.json());
 
 // log only 4xx and 5xx responses to console
 app.use(morgan("dev", {
-  skip: function (req, res) { return res.statusCode < 400; }
+  skip: (req, res) => res.statusCode < 400
 }));
 
 // log all requests to access.log
