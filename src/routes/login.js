@@ -10,8 +10,8 @@
  * Module dependencies.
  */
 
-const express = require("express");
-const auth = require("../lib/auth"); // require authentication module
+import express from "express";
+import auth from "../lib/auth"; // require authentication module
 
 // use express router
 const router = express.Router();
@@ -20,4 +20,4 @@ const router = express.Router();
 router.post("/", auth);
 
 // set up a router and pass it using module.exports
-module.exports = router;
+export default router;

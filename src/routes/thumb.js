@@ -10,11 +10,11 @@
  * Module dependencies.
  */
 
-const express = require("express");
-const auth = require("../lib/auth"); // require authentication module
-const jimp = require("jimp");
-const uuid = require("uuid/v1"); // timestamp uuid
-const url = require("url");
+import express from "express";
+import auth from "../lib/auth"; // require authentication module
+import jimp from "jimp";
+import uuid from "uuid/v1"; // timestamp uuid
+import url from "url";
 
 // use express router
 const router = express.Router();
@@ -37,13 +37,13 @@ router.post("/", auth, (req, res) => {
         // set up thumbnail public url
         let origin = url.format({ // format origin
           protocol: req.protocol,
-          host: req.get('host')
+          host: req.get("host")
         });
         
         let thumbnail = `${origin}/imgs/${filename}`; // thumbnail_url
 
         image.cover(50, 50) // resize to 50x50 pixels keeping aspect ratio
-        .write(filepath); // save to public url locally
+          .write(filepath); // save to public url locally
 
         res.status(201).json({
           status: "success",
@@ -64,4 +64,4 @@ router.post("/", auth, (req, res) => {
 });
 
 // set up a router and pass it using module.exports
-module.exports = router;
+export default router;

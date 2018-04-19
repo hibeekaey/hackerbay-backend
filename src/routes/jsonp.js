@@ -10,9 +10,9 @@
  * Module dependencies.
  */
 
-const express = require("express");
-const auth = require("../lib/auth"); // require authentication module
-const jsonpatch = require("jsonpatch");
+import express from "express";
+import auth from "../lib/auth"; // require authentication module
+import jsonpatch from "jsonpatch";
 
 // use express router
 const router = express.Router();
@@ -38,4 +38,4 @@ router.post("/", auth, async (req, res) => {
 });
 
 // set up a router and pass it using module.exports
-module.exports = router;
+export default router;
