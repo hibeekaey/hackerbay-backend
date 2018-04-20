@@ -11,7 +11,7 @@
  */
 
 import express from "express";
-import auth from "../lib/auth"; // require authentication module
+import auth from "../lib/auth"; // import authentication module
 import jsonpatch from "jsonpatch";
 
 // use express router

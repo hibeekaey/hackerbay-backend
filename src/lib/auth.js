@@ -12,7 +12,7 @@
 
 import jwt from "jsonwebtoken"; // used to create, sign, and verify tokens
 
-// // set up a authentication model and pass it using module.exports
+// set up a authentication model and pass it using module.exports
 export default function (req, res, next) {
   let token = req.body.token || req.query.token || req.headers["x-access-token"];
   

@@ -11,7 +11,7 @@
  */
 
 import express from "express";
-import auth from "../lib/auth"; // require authentication module
+import auth from "../lib/auth"; // import authentication module
 
 // use express router
 const router = express.Router();
