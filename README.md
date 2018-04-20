@@ -49,7 +49,7 @@ The API has three endpoints namely, `/login` endpoint for authentication using j
 ```json
 {
   "username": String,
-  "password": String"
+  "password": String
 }
 ```
 
