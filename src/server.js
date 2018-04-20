@@ -26,6 +26,11 @@ dotenv.config();
 // initialize app
 let app = express();
 
+// for testing
+app.get("/", (req, res) => {
+  res.send("Hooray!");
+});
+
 // public directory
 app.use(express.static(`${process.cwd()}/public`));
 
@@ -57,3 +62,5 @@ mount(app);
 
 // listen to the app on port process.env.PORT
 app.listen(process.env.PORT);
+
+export default app;
