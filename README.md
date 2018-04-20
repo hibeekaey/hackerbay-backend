@@ -24,11 +24,11 @@ npm run serve
 
 This will build the project and run the distribution files.
 
-**Note** Node.js is require! Here is the link [Node.js](https://nodejs.org/en/).
+**Note** Node.js is required! Here is the link [Node.js](https://nodejs.org/en/).
 
 ## Test
 
-Run the following command to run test and generate code coverage (Mocha and Istanbul):
+Run the following commands to test and generate code coverage (Mocha and Istanbul):
 
 ```bash
 npm test
@@ -39,7 +39,7 @@ This will run the test suite and generate the code coverage.
 
 ## API Documentation
 
-The API has three endpoints namely, `/login` endpoint for authentication user using jwt and returning the token, `/jsonp` endpoint for getting json object and patch object and returning the json patch, and `/thumb` endpoint for generating image thumbnail and return the public url.
+The API has three endpoints namely, `/login` endpoint for authentication using jwt and returning the token, `/jsonp` endpoint for getting json object and patch object and returning the json patch data, and `/thumb` endpoint for generating image thumbnail and returning the public url.
 
 ### Login Endpoint Request
 
@@ -55,7 +55,7 @@ The API has three endpoints namely, `/login` endpoint for authentication user us
 
 ### Login Endpoint Response
 
-- HTTP Status: `200: success`
+- HTTP Status: `200: ok`
 - JSON data:
 
 ```json
@@ -82,7 +82,7 @@ The API has three endpoints namely, `/login` endpoint for authentication user us
 ```json
 {
   "data": {
-  "username": String
+  "username": String,
   "password": String
   },
   "patch": Array
